@@ -1,6 +1,7 @@
 require 'keymaps'
 require 'options'
 require 'plugins.keymaps'
+require 'workflows'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
@@ -831,6 +832,9 @@ require('lazy').setup({
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
   require 'kickstart.plugins.code-runner',
   require 'kickstart.plugins.yazi',
+  require 'kickstart.plugins.md-preview',
+  require 'plugins.alpha',
+  require 'plugins.obsidian',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
