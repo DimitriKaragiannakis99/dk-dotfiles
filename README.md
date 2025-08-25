@@ -1,7 +1,8 @@
 ## My Dotfiles
 
 ### TO DO:
-- [ ] Remove bloat from kickstart
-- [ ] Organize lua folders (plugins, keymaps, options, etc.)
-- [ ] Add goolord plugin
-- [ ] Add obsidian plugin
+- [x] Remove bloat from kickstart
+- [x] Organize lua folders (plugins, keymaps, options, etc.)
+- [x] Add goolord plugin
+- [x] Add obsidian plugin
+- [ ] Add tmux

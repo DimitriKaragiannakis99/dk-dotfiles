@@ -21,7 +21,7 @@ return {
     workspaces = {
       {
         name = 'obsidian-root',
-        path = '/Users/dimitrikaragiannakis/Documents/obsidian-root',
+        path = '/Users/dimitrikaragiannakis/Library/Mobile Documents/iCloud~md~obsidian/Documents/obsidian-root',
       },
     },
     notes_subdir = 'inbox',

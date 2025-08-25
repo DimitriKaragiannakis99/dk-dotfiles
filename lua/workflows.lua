@@ -22,10 +22,32 @@
 -- >>> ou # sync local with Notion
 --
 -- navigate to vault
-vim.keymap.set('n', '<leader>oo', ':cd /Users/dimitrikaragiannakis/Documents/obsidian-root<Cr>')
+vim.keymap.set('n', '<leader>oo', ':cd /Users/dimitrikaragiannakis/Library/Mobile Documents/iCloud~md~obsidian/Documents/obsidian-root<Cr>')
 --
 -- convert note to template and remove leading white space
 vim.keymap.set('n', '<leader>on', ':ObsidianTemplate note<cr> :lua vim.cmd([[1,/^\\S/s/^\\n\\{1,}//]])<cr>')
--- strip date from note title and replace dashes with spaces
+
+-- convert note to daily todo templace
+vim.keymap.set('n', '<leader>td', ':ObsidianTemplate todo<cr> :lua vim.cmd([[1,/^\\S/s/^\\n\\{1,}//]])<cr>')
+
 -- must have cursor on title
-vim.keymap.set('n', '<leader>of', ':s/\\(# \\)[^_]*_/\\1/ | s/-/ /g<cr>')
+vim.keymap.set('n', '<leader>of', ':.s/-/ /g<CR>')
+
+-- for review workflow
+-- move file in current buffer to zettelkasten folder
+vim.keymap.set('n', '<leader>ok', function()
+  -- Get full path of current file
+  local filepath = vim.fn.expand '%:p'
+
+  -- Destination folder
+  local target_dir = '/Users/dimitrikaragiannakis/Library/Mobile Documents/iCloud~md~obsidian/Documents/obsidian-root/zettelkasten'
+
+  -- Run mv via shell
+  vim.fn.system { 'mv', filepath, target_dir }
+
+  -- Close the buffer
+  vim.cmd 'bd'
+end, { noremap = true, silent = true })
+
+-- delete file in current buffer
+vim.keymap.set('n', '<leader>odd', ":!rm '%:p'<cr>:bd<cr>")
