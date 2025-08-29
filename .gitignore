@@ -4,3 +4,6 @@ test.sh
 nvim
 
 spell/
+
+# env files
+.env
