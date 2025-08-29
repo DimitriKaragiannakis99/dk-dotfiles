@@ -27,5 +27,6 @@ All scripts in `bin/` are executable and can be called directly once the folder 
 ### Progress Bar
 - Made in bash
 - Progress bar for the processing of the transfer of files from my zettelkasten folder to their respective note folders
-[Progress Bar Video](./assets/progress-bar-video.mov)
 
+
+![progress-bar-video-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/80a091c3-932b-4740-a223-a202b15811eb)
