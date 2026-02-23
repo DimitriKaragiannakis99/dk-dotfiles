@@ -1,26 +1,30 @@
 # 🌱 Dotfiles
 
 Welcome to my personal **dotfiles**!  
-This repository contains the configuration and small automations I use daily to customize my developer environment.  
+This repository contains the configuration and small automations I use daily to customize my dev environment.  
 
 ---
 
-### 📝 Neovim
-- Based on [TJ Devries’ *Kickstart Neovim*](https://www.youtube.com/watch?v=m8C0Cq9Uv9o) video.  
-
 ### ⚙️ Bin Scripts
 - `bin/` contains small executables I wrote to automate repetitive tasks:  
-  - 📒 **Notion Automations** → quickly add jobs/tasks to my Notion database.  
   - 🗂️ **Zettelkasten Organizer** → keeps my notes structured automatically.  
-  - …plus other helpers that simplify my workflow.  
 
 All scripts in `bin/` are executable and can be called directly once the folder is on your `$PATH`.
 
 ### 🐚 Zsh
 - `.zshrc` includes my shell customizations:
   - Aliases for frequent commands.  
-  - Environment variables for projects/tools.  
   - Plugin & prompt setup for a cleaner workflow.  
+
+1. Clone this repo 
+2. Make sure your system has **zsh** and **ghostty** downloaded
+3. Symlink the zsh config files
+
+```bash
+ln -s ~/{path-to-dotfiles}/dk-dotfiles/zsh/.zshrc ~/.zshrc
+ln -s ~/{path-to-dotfiles}/dk-dotfiles/zsh/.p10k.zsh ~/.p10k.zsh
+```
+4. Run zsh
 
 ---
 
