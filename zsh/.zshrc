@@ -83,11 +83,12 @@ alias gitp='git push'
 alias gitm='git commit -m'
 
 # NOTE: Obsidian
-alias td='bash $HOME/.config/bin/td.sh'
+alias je='bash $HOME/.config/bin/journal-entry.sh'
 alias on='bash $HOME/.config/bin/on.sh'
 alias og='bash $HOME/.config/bin/og-pb.sh'
-alias oo='cd $HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/obsidian-root'
-alias or='vim $HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/obsidian-root/inbox/*.md'
+alias oo='cd $HOME/Documents/my-obs-vault/'
+alias or='vim $HOME/Documents/my-obs-vault/inbox/*.md'
+alias cn='bash $HOME/.config/bin/coding-note.sh'
 
 # Shell integrations
 eval "$(fzf --zsh)"
