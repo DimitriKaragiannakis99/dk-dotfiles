@@ -20,8 +20,8 @@ return {
   opts = {
     workspaces = {
       {
-        name = 'obsidian-root',
-        path = '/Users/dimitrikaragiannakis/Library/Mobile Documents/iCloud~md~obsidian/Documents/obsidian-root',
+        name = 'my-obs-vault',
+        path = '$HOME/Documents/my-obs-vault/',
       },
     },
     notes_subdir = 'inbox',

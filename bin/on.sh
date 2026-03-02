@@ -8,6 +8,6 @@ fi
 
 file_name=$(echo "$1" | tr ' ' '-')
 formatted_file_name=${file_name}.md
-cd "$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/obsidian-root" || exit
-touch "inbox/${formatted_file_name}"
-nvim "inbox/${formatted_file_name}"
+cd "$HOME/Documents/my-obs-vault/inbox/" || exit
+touch "${formatted_file_name}"
+nvim "${formatted_file_name}"

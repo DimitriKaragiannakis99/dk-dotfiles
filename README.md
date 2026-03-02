@@ -5,6 +5,20 @@ This repository contains the configuration and small automations I use daily to 
 
 ---
 
+### NVIM
+- `/nvim` contains my entire nvim config including lazy
+- `/nvim/lua/workflows.lua` has paths that need to be updated
+- `/nvim/lua/plugins/obsidian.lua` has paths that need to be updated
+
+1. Clone this repo
+2. Make sure nvim is installed 
+3. Symlink the nvim config directory
+
+```bash
+ln -s ~/{path-to-dotfiles}/dk-dotfiles/nvim ~/.config/nvim
+```
+4. Open nvim and let lazy download all the dependencies
+
 ### ⚙️ Bin Scripts
 - `bin/` contains small executables I wrote to automate repetitive tasks:  
   - 🗂️ **Zettelkasten Organizer** → keeps my notes structured automatically.  

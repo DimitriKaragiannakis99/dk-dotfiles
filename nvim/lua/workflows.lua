@@ -22,16 +22,36 @@
 -- >>> ou # sync local with Notion
 --
 -- navigate to vault
-vim.keymap.set('n', '<leader>oo', ':cd /Users/dimitrikaragiannakis/Library/Mobile Documents/iCloud~md~obsidian/Documents/obsidian-root<Cr>')
+vim.keymap.set('n', '<leader>oo', ':cd $HOME/Documents/my-obs-vault/<Cr>')
 --
 -- convert note to template and remove leading white space
 vim.keymap.set('n', '<leader>on', ':ObsidianTemplate note<cr> :lua vim.cmd([[1,/^\\S/s/^\\n\\{1,}//]])<cr>')
 
--- convert note to daily todo templace
-vim.keymap.set('n', '<leader>td', ':ObsidianTemplate todo<cr> :lua vim.cmd([[1,/^\\S/s/^\\n\\{1,}//]])<cr>')
+-- convert note to daily todo template
+vim.keymap.set('n', '<leader>je', ':ObsidianTemplate journal-entry<cr> :lua vim.cmd([[1,/^\\S/s/^\\n\\{1,}//]])<cr>')
+
+-- convert coding note using template
+vim.keymap.set("n", "<leader>cn", function()
+
+    vim.ui.input({ prompt = "Problem URL: " }, function(url)
+      if not url then url = "" end
+
+      vim.cmd("ObsidianTemplate coding-note")
+
+      local date = os.date("%Y-%m-%d")
+      local buf = vim.api.nvim_get_current_buf()
+      local lines = vim.api.nvim_buf_get_lines(buf, 0, -1, false)
+      for i, line in ipairs(lines) do
+        lines[i] = line:gsub("{{date}}", date)
+        lines[i] = line:gsub("{{URL}}", url)
+      end
+      vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
+    end)
+  end)
 
 -- must have cursor on title
-vim.keymap.set('n', '<leader>of', ':.s/-/ /g<CR>')
+-- formatting the title for notes
+vim.keymap.set('v', '<leader>of', [[:s/-/ /g | s/\<\(\w\)/\u\1/g<CR>]], { noremap = true, silent = true })
 
 -- for review workflow
 -- move file in current buffer to zettelkasten folder
@@ -40,7 +60,7 @@ vim.keymap.set('n', '<leader>ok', function()
   local filepath = vim.fn.expand '%:p'
 
   -- Destination folder
-  local target_dir = '/Users/dimitrikaragiannakis/Library/Mobile Documents/iCloud~md~obsidian/Documents/obsidian-root/zettelkasten'
+  local target_dir = '$HOME/Documents/my-obs-vault/zettelkasten'
 
   -- Run mv via shell
   vim.fn.system { 'mv', filepath, target_dir }

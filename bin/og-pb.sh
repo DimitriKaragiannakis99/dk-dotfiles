@@ -31,7 +31,7 @@ progress-bar() {
 
 
 # Directory containing markdown files
-VAULT_DIR="/Users/dimitrikaragiannakis/Library/Mobile Documents/iCloud~md~obsidian/Documents/obsidian-root"
+VAULT_DIR="$HOME/Documents/my-obs-vault/"
 SOURCE_DIR="zettelkasten"
 DEST_DIR="notes"
 
